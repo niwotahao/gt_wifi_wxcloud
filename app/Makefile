@@ -30,7 +30,8 @@ SUBDIRS=    \
 	misc	\
 	wx	\
 	cjson	\
-	user
+	user\
+	Serial
 
 endif # } PDIR
 
@@ -63,7 +64,8 @@ COMPONENTS_eagle.app.v6 = \
 	softpwm/libsoftpwm.a	\
 	misc/libmisc.a	\
 	cjson/libcjson.a	\
-	user/libuser.a
+	user/libuser.a \
+	Serial/libSerial.a
 
 LINKFLAGS_eagle.app.v6 = \
 	-L../lib        \
@@ -143,6 +145,7 @@ INCLUDES += -I $(PDIR)airkiss_lan
 INCLUDES += -I $(PDIR)misc
 INCLUDES += -I $(PDIR)softpwm
 INCLUDES += -I $(PDIR)cjson
+INCLUDES += -I $(PDIR)Serial
 
 PDIR := ../$(PDIR)
 sinclude $(PDIR)Makefile

@@ -45,32 +45,5 @@ void user_init(void)
 
 	system_init_done_cb(init_done_cb);
 
-#if 0
-
-	uint8 i,n=0,Buffter[10];
-	/**< 查询 */
-	Buffter[n++] = 0x5a; /**< 帧头 */
-	Buffter[n++] = 0x00; /**< 数据类型 */
-	Buffter[n++] = 0x00; /**< 帧字节数*/
-	Buffter[n]   = 0x00; /**< 校验和*/
-	for(i = 0;i < n;i++)
-	{
-		Buffter[n] += Buffter[i];
-	}
-	uart0_tx_buffer(Buffter,(n+1));
-
-	Buffter[n++] = 0x5a;/**< 帧头 */
-	Buffter[n++] = 0x80;/**< 数据类型 */
-	Buffter[n++] = 0x00;/**< 帧字节数*/
-	Buffter[n++] = 0x00;/**< 数据内容*/
-	Buffter[n]   = 0x00;/**< 校验和*/
-	for(i = 0;i < n;i++)
-	{
-		Buffter[n] += Buffter[i];
-	}
-	uart0_tx_buffer(Buffter,(n+1));
-
-#endif
-
 }
 
